@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/bar.css">
+    <link rel="stylesheet" href="styles/window.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Homescreen</title>
+</head>
+<body>
+    
+<div class="interface">
+  <main class="main-panel">
+    <div class="icon-rail">
+    </div>
+
+    <div class="display">
+        <p>&gt; <span id="text1">Error</span></p>
+        <p>&gt; <span id="text2">Refresh</span></p>
+        <p>&gt; <span id="text3">Page</span></p>
+    </div>
+
+    <div class="icon-rail">
+    </div>
+  </main>
+
+  <aside class="side-panel">
+    <div class="control-bar">
+      <a href="News.html" class="control-button"
+      data-tooltip="Announcments, each time youll be forced to update the game you'll most likely recieve one">
+      <img src="pic/micicon.png" alt="📢"></a>
+      
+<div class="control-button mail-button"
+     data-tooltip="Your mailbox.">
+    <img src="pic/mailicon.png" alt="📧">
+</div>
+
+<!-- MAIL POPUP -->
+<div class="mail-popup" id="mailPopup">
+    <img src="pic/mail.png" alt="Mailbox">
+
+    <div class="mail-close-area" onclick="closeMail()"></div>
+</div>
+
+      <div class="control-button"
+      data-tooltip="These are your general settings where you can change stuff like keyboard shortcuts, settings, input coupon code, return or exit game.">
+      <img src="pic/gearicon.png" alt="⚙️"></div>
+    </div>
+
+    <div class="slot"><div class="slot-content"
+        data-tooltip='In this box the game displays the current battlepass'
+        ></div></div>
+    <div class="slot"><div class="slot-content"
+        data-tooltip='In this box the game displays the current banners'
+        ></div></div>
+    <div class="slot"><div class="slot-content"
+        data-tooltip='In this box the game displays the current events'
+        ></div></div>
+  </aside>
+</div>
+
+<!-- Reserved space: leave empty -->
+<div class="safe-zone"></div>
+
+    <div id="Bars"></div>
+    <script src="script.js"></script>
+    <script src="hover.js" defer></script>
+    <script src="mail.js" defer></script>
+    <script>
+    async function loadPageContent() {
+    try {
+        const response = await fetch("/api/content/index");
+
+        if (!response.ok) {
+            throw new Error("Could not load page content");
+        }
+
+        const content = await response.json();
+
+        document.getElementById("text1").textContent =
+            content.text1 ?? "text 1";
+
+        document.getElementById("text2").textContent =
+            content.text2 ?? "text 2";
+
+        document.getElementById("text3").textContent =
+            content.text3 ?? "text 3";
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+loadPageContent();
+</script>
+</body>
+</html>

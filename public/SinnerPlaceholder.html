@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/sinner_info.css">
+    <title>Sinner</title>
+</head>
+<body>
+<div class="background">
+    <img id="mainImage" src="pic/sinr/info/sum.png" class="fill">
+
+    <div class="click-box sum" onclick="changeImage('pic/sinr/info/sum.png')"></div>
+    <div class="click-box skills" onclick="changeImage('pic/sinr/info/s1.png')"></div>
+
+    <div class="click-box s1" onclick="changeImage('pic/sinr/info/s1.png')"></div>
+    <div class="click-box s2" onclick="changeImage('pic/sinr/info/s2.png')"></div>
+    <div class="click-box s3" onclick="changeImage('pic/sinr/info/s3.png')"></div>
+    <div class="click-box def" onclick="changeImage('pic/sinr/info/def.png')"></div>
+    <div class="click-box passive" onclick="changeImage('pic/sinr/info/pass.png')"></div>
+
+    <div class="click-box ego" onclick="changeImage('pic/sinr/info/ego.png')"></div>
+    <div class="click-box ego2" onclick="changeImage('pic/sinr/info/ego.png')"></div>
+    <div class="click-box egopas" onclick="changeImage('pic/sinr/info/egop.png')"></div>
+
+    <div class="click-box sanity" onclick="changeImage('pic/sinr/info/san.png')"></div>
+</div>
+    <script src="script.js"></script>
+    <script>
+function changeImage(imagePath) {
+    document.getElementById("mainImage").src = imagePath;
+    updateClickBoxes();
+}
+
+function updateClickBoxes() {
+    const image = document.getElementById("mainImage");
+    const currentImage = image.getAttribute("src");
+
+    const skillsActive = [
+        "s1.png",
+        "s2.png",
+        "s3.png",
+        "def.png",
+        "pass.png"
+    ].some(name => currentImage.endsWith(name));
+
+    const egoActive = [
+        "ego.png",
+        "egop.png"
+    ].some(name => currentImage.endsWith(name));
+
+    // Skills
+    document.querySelectorAll(
+        ".s1, .s2, .s3, .def, .passive"
+    ).forEach(box => {
+        box.classList.toggle("disabled", !skillsActive);
+    });
+
+    // EGO
+    document.querySelectorAll(
+        ".ego2, .egopas"
+    ).forEach(box => {
+        box.classList.toggle("disabled", !egoActive);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", updateClickBoxes);
+    </script>
+</body>
+</html>

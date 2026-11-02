@@ -1,0 +1,82 @@
+.main-box {
+  position: fixed;
+  /* left: calc(100vw / 19); */
+    left: 15.79vw;
+  /* right: calc(200vw / 19); */
+    right: 18.42vw;
+  top: 12.89%;
+  bottom: 24.30%;
+  border: 2px solid black;
+  box-sizing: border-box;
+  background-color: #88603A;
+}
+
+.lower-box {
+  position: absolute;
+  bottom: 1.5%;
+  left: 0.75%;
+  width: 98.5%;
+  height: 85%;
+  box-sizing: border-box;
+  background-color: #141310;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.ut-box {
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ut-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ut-box .bg {
+  height: 90%;
+  width: 100%;
+  object-fit: contain;
+  top: 5%;
+}
+
+.ut-box .frame {
+  z-index: 9;
+}
+.Sinner_name {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-40%, -40%);
+    z-index: 10;
+    text-align: right;
+    color: #EDBE00;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    pointer-events: none;
+}
+.Sinner_lv {
+    position: absolute;
+    top: 60%;
+    left: 67%;
+    transform: translate(-40%, -40%);
+    z-index: 10;
+    text-align: right;
+    color: #F6D4B1;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    pointer-events: none;
+}

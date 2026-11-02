@@ -1,0 +1,30 @@
+        .news-search-container {
+            max-width: 650px;
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        #news-search {
+            width: 100%;
+            padding: 15px 22px;
+            border: 1px solid #444;
+            border-radius: 30px;
+            background: #171717;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        #news-search::placeholder {
+            color: #999;
+        }
+
+        #news-search:focus {
+            border-color: #888;
+        }
+
+        #search-message {
+            text-align: center;
+            color: #999;
+            margin: 20px;
+        }

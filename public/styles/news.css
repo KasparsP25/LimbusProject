@@ -1,0 +1,90 @@
+.main-box {
+    width: 75%;
+    height: 560px;
+    margin-left: 12.5%;
+    margin-top: 20px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #88603A;
+}
+
+/* Each news post */
+#news-list article {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Post category */
+.news-category {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #e8eefc;
+    color: #254a91;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Post title */
+#news-list article h2 {
+    margin: 12px 0;
+    font-size: 26px;
+}
+
+/* Post description */
+#news-list article > p:not(.news-category) {
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Post image */
+.news-image {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+/* Full post content */
+.news-content {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    margin: 16px 0;
+}
+
+/* Post date */
+#news-list article small {
+    display: block;
+    color: #777777;
+    margin-top: 12px;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+    #news-list article {
+        margin: 16px 8px;
+        padding: 14px;
+    }
+
+    #news-list article h2 {
+        font-size: 21px;
+    }
+
+    .news-image {
+        height: 200px;
+    }
+}

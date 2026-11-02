@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Editor</title>
+    <!-- <link rel="stylesheet" href="/styles/style.css"> -->
+</head>
+<body>
+
+    <!-- Regular page editor -->
+    <section id="page-editor" hidden>
+        <h1>Edit your page</h1>
+
+        <form id="edit-form"></form>
+
+        <p id="status"></p>
+
+        <a href="/index.html">Cancel</a>
+    </section>
+
+    <!-- News management menu -->
+    <section id="news-menu" hidden>
+        <h1>News management</h1>
+
+        <button id="add-post">Add a post</button>
+        <button id="edit-post">Edit a post</button>
+        <button id="delete-post">Delete a post</button>
+
+        <br><br>
+        <a href="/News.html">Back to news</a>
+    </section>
+
+    <!-- List of existing posts -->
+    <section id="post-list" hidden>
+        <h1 id="list-heading">Select a post</h1>
+
+        <div id="posts-container"></div>
+
+        <button id="back-to-menu">Back</button>
+    </section>
+
+    <!-- Delete confirmation -->
+    <section id="delete-confirmation" hidden>
+        <h1>Delete post?</h1>
+
+        <p id="delete-message"></p>
+
+        <button id="confirm-delete">Yes, delete</button>
+        <button id="cancel-delete">Cancel</button>
+
+        <p id="delete-status"></p>
+    </section>
+
+    <!-- News post form -->
+    <section id="news-form-section" hidden>
+        <h1 id="news-form-heading">Add a post</h1>
+
+        <form id="news-form">
+            <div id="news-form-fields"></div>
+
+            <button type="submit">Save post</button>
+            <button type="button" id="cancel-news-form">Cancel</button>
+        </form>
+
+        <p id="news-status"></p>
+    </section>
+
+    <script src="/editor.js"></script>
+
+</body>
+</html>

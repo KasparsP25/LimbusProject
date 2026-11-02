@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MySQL Test</title>
+</head>
+<body>
+
+    <h1>Game Database Test, this information for now isn't needed.</h1>
+
+    <div id="games">
+        Loading games...
+    </div>
+
+    <script>
+        async function loadGames() {
+            const container = document.getElementById('games');
+
+            try {
+                const response = await fetch('/api/games');
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(
+                        `Server returned ${response.status}: ${errorText}`
+                    );
+                }
+
+                const games = await response.json();
+
+                container.innerHTML = '';
+
+                games.forEach(game => {
+                    const card = document.createElement('div');
+
+                    const title = document.createElement('h2');
+                    title.textContent = game.game_name;
+
+                    const creator = document.createElement('p');
+                    creator.textContent = 'Creator: ' + game.creator;
+
+                    const publisher = document.createElement('p');
+                    publisher.textContent = 'Publisher: ' + game.publisher;
+
+                    // NEW: Genre
+                    const genre = document.createElement('p');
+                    genre.textContent = 'Genre: ' + game.genre;
+
+                    // NEW: Release date
+                    const releaseDate = document.createElement('p');
+                    releaseDate.textContent = 'Release date: ' +
+                        new Date(game.release_date).toLocaleDateString();
+
+                    // NEW: Platforms
+                    const platforms = document.createElement('p');
+                    platforms.textContent = 'Platforms: ' + game.platforms;
+
+                    const description = document.createElement('p');
+                    description.textContent = game.game_description;
+
+                    const image = document.createElement('img');
+                    image.src = game.main_image;
+                    image.alt = game.game_name;
+                    image.width = 500;
+                    image.height = 300;
+
+                    card.append(
+                        image,
+                        title,
+                        creator,
+                        publisher,
+                        genre,
+                        releaseDate,
+                        platforms,
+                        description
+                    );
+
+                    container.appendChild(card);
+                });
+
+                if (games.length === 0) {
+                    container.textContent = 'No games found!';
+                }
+
+            } catch (error) {
+                console.error(error);
+                container.textContent = 'Error loading games. Check the server!';
+            }
+        }
+
+        loadGames();
+    </script>
+
+</body>
+</html>

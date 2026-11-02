@@ -1,0 +1,352 @@
+.buttons {
+    background-color: rgb(60, 0, 0);
+    width: 550px;
+    height: 120px;
+    padding: 10px;
+    border: 5px solid rgb(97, 94, 68);
+
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    box-sizing: border-box;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.buttons a {
+    color: rgb(140, 111, 81);
+    text-decoration: none;
+    background-color: rgb(31, 14, 0);
+
+    width: 80px;
+    height: 60px; 
+    padding: 10px;
+    border: 5px solid rgb(69, 42, 15);
+
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;  
+    box-sizing: border-box;
+}
+
+
+.buttons a.active {
+    color: rgb(243, 176, 77);
+    background-color: rgb(108, 1, 3);
+    width: 60px;
+    height: 45px; 
+}
+
+.buttons a:hover {
+    color: rgb(243, 176, 77);
+}
+/* ------------------------------------------------------------------ */
+/* ------------------------------------------------------------------ */
+/* =========================
+   MAIN HUD
+========================= */
+
+.hud {
+    box-sizing: border-box;
+    width: 700px;
+    height: 120px;
+
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+
+    display: grid;
+    grid-template-columns: 105px 155px minmax(175px, 1fr) 115px 75px;
+    align-items: center;
+    gap: 6px;
+
+    padding: 7px 10px;
+    color: #e8d5a9;
+
+    background: linear-gradient(
+        180deg, #34312a 0%, #201e19 50%, #30271e 100%
+    );
+
+    border: 6px solid #171512;
+    outline: 3px solid #a87543;
+
+    clip-path: polygon(
+        15px 0, calc(100% - 15px) 0,
+        100% 15px, 100% calc(100% - 15px),
+        calc(100% - 15px) 100%, 15px 100%,
+        0 calc(100% - 15px), 0 15px
+    );
+
+    box-shadow:
+        inset 0 0 0 2px #bd854d,
+        inset 0 0 0 6px #171512,
+        0 5px 12px rgba(0, 0, 0, .7);
+
+    z-index: 9999;
+}
+
+/* LEVEL */
+
+.col1 {
+    min-width: 0;
+    height: 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 3px solid #a92320;
+}
+
+.col1 .id {
+    height: 15px;
+    display: flex;
+    align-items: center;
+    border: 0;
+    padding: 0;
+    font: italic 9px Impact, sans-serif;
+    color: #e6d0a7;
+    white-space: nowrap;
+}
+
+.col1 .level {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    border: 0;
+    padding: 0;
+}
+
+.col1 .level .text {
+    align-self: flex-start;
+    padding-top: 5px;
+    font: 16px Impact, sans-serif;
+}
+
+.col1 .level .number {
+    font: 48px/.95 Impact, "Arial Black", sans-serif;
+    letter-spacing: -1px;
+    color: #f0dfb8;
+    text-shadow: 2px 2px #33291d, -1px -1px #fff1ca;
+}
+
+/* --------------------------------------------------------------------- */
+/* --------------------------------Banner------------------------------- */
+/* --------------------------------------------------------------------- */
+
+.banner-box {
+    box-sizing: border-box;
+    width: 100%;
+    height: 58px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background: black;
+    border: 3px solid #19150f;
+    outline: 1px solid #bd854d;
+    border-radius: 3px;
+}
+
+.banner-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CURRENCY + HP */
+
+.currency {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+}
+
+.currency-item {
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3px;
+
+    padding: 0 2px;
+    background: #090806;
+    border-bottom: 2px solid #17130e;
+
+    font: 20px Impact, sans-serif;
+    color: #f0dfb8;
+}
+
+.currency-item img {
+    flex-shrink: 0;
+    width: 29px;
+    height: 29px;
+    object-fit: contain;
+}
+
+.currency-item span {
+    min-width: 17px;
+    text-align: center;
+    line-height: 1;
+    text-shadow: 2px 2px #372719;
+}
+
+/* HP BAR */
+
+.hp-container {
+    position: relative;
+    inset: auto;
+    box-sizing: border-box;
+    width: 100%;
+    height: 27px;
+    padding: 3px;
+
+    background: #100d09;
+    border-left: 5px solid #a87543;
+    border-right: 5px solid #a87543;
+
+    box-shadow: inset 0 0 0 1px #33271a, 0 2px 4px #000;
+}
+
+.hp-bar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: url("CI/liquid.png") center/cover no-repeat;
+    color: #e6e4cb;
+    font: 15px Impact, sans-serif;
+    text-shadow: 2px 2px #22582f;
+}
+
+/* LUNACY */
+
+.lunacy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.lun {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font: 13px Impact, sans-serif;
+}
+
+.lun img {
+    flex-shrink: 0;
+    width: 31px;
+    height: 39px;
+    object-fit: contain;
+}
+
+.lun span {
+    padding: 3px 6px;
+    background: #c94237;
+    color: #78d55c;
+
+    clip-path: polygon(
+        8px 0, 100% 0, 100% 100%,
+        8px 100%, 0 50%
+    );
+
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.lunacy strong {
+    display: block;
+    margin-left: 34px;
+    margin-top: 1px;
+    color: #e54b39;
+    font: 29px/1.05 Impact, sans-serif;
+    text-shadow: 2px 2px #401a14;
+}
+
+/* INVENTORY */
+
+/* INVENTORY BUTTON ON HUD */
+.inventory {
+    min-width: 0;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+
+    color: #a87543;
+    font: 14px Impact, sans-serif;
+    text-shadow: 1px 1px #21170f;
+
+    cursor: pointer;
+}
+
+/* INVENTORY ICON */
+.inventory img {
+    width: 53px;
+    height: 33px;
+    object-fit: contain;
+}
+
+/* INVENTORY FULLSCREEN POPUP */
+.inventory-popup {
+    display: none;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90vw;
+    height: 90vh;
+
+    box-sizing: border-box;
+    padding: 45px 20px 20px;
+
+    background: rgba(255, 239, 133, 0.97);
+
+    border: 3px solid #a87543;
+    border-radius: 10px;
+
+    z-index: 1000000;
+
+    justify-content: center;
+    align-items: center;
+}
+.inventory-popup p{
+    font-size: 100px;
+}
+
+/* CLOSE BUTTON */
+.close-inventory {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+
+    background: none;
+    border: none;
+
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+
+    cursor: pointer;
+    z-index: 1000001;
+}
+
+.close-inventory:hover {
+    color: red;
+}

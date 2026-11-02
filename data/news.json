@@ -1,0 +1,22 @@
+[
+  {
+    "id": "36125d89-b53d-4df2-9bf4-b47038da6e4a",
+    "category": "Lobotomy Corp",
+    "title": "Steam sale!!",
+    "description": "Current steam sale",
+    "content": "Not really a steam sale but due to Lob Corp getting an award it's currently on a 66% sale on steam",
+    "image": "",
+    "date": "2026-10-28",
+    "createdAt": "2026-10-28T20:58:29.640Z"
+  },
+  {
+    "id": "5a595fb1-17a9-462d-9e6f-abfb14428912",
+    "category": "Test",
+    "title": "Testing",
+    "description": "This post was made to test CRUD",
+    "content": "Text",
+    "image": "/uploads/4ccd540d-02e0-4f5c-a7f0-9e9e858e38ba.png",
+    "date": "2026-01-13",
+    "createdAt": "2026-10-28T20:50:50.744Z"
+  }
+]
